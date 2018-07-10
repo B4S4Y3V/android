@@ -1,0 +1,23 @@
+
+
+class MainActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        val SharedPreferences = this.getSharedPreferences("com.karproject.app.storedatakotlin",android.content.Context.MODE_PRIVATE) //nama Packet ismi; MOD verme işlemi sadece benım uygulamamın bu verılere ulasabılecegını gosterir
+
+        var age = 30
+
+        //SharedPreferences.edit().putInt("userAge",age).apply() //UserAge anahtar kelıme, age (değer) apply unutulmamalı.
+
+        val storedAge = SharedPreferences.getInt("userAge",0) // defValue default değer anlamında eğer hafızada değer yoksa pro çökmesin diye sıfır getirir.
+        println("stored age $storedAge" )
+
+
+
+
+
+    }
+}
