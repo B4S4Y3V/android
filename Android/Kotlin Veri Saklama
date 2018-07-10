@@ -2,7 +2,8 @@
 
 class MainActivity : AppCompatActivity() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+
+   override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
@@ -15,8 +16,18 @@ class MainActivity : AppCompatActivity() {
         val storedAge = SharedPreferences.getInt("userAge",0) // defValue default değer anlamında eğer hafızada değer yoksa pro çökmesin diye sıfır getirir.
         println("stored age $storedAge" )
 
+        age = 31
 
+        //SharedPreferences.edit().putInt("UserAge",age).apply()
 
+        val storedAge2 = SharedPreferences.getInt("UserAge",0)              
+        println("stored age 2 : $storedAge2")                   
+
+        SharedPreferences.edit().remove("UserAge").apply()          // Saklanan veriyi silme
+
+        val storedAge3 = SharedPreferences.getInt("UserAge",0)
+
+        println("stored age 3 : $storedAge3")
 
 
     }
